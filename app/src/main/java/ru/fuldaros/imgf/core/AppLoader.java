@@ -11,6 +11,10 @@ public class AppLoader extends Thread {
 
     private String TAG = "AppLoader";
 
+    public static File getDefaultStorage() {
+        return new File(Environment.getExternalStorageDirectory(), "ImageFactory");
+    }
+
     @Override
     public void run() {
         // TODO: Implement this method
@@ -43,9 +47,5 @@ public class AppLoader extends Thread {
         ImageFactory.KERNEL_REPACKED = kernelRepacked;
         ImageFactory.KERNEL_UNPACKED = kernelUnpacked;
         ImageFactory.IMAGE_CONVERTED = imageConverted;
-    }
-
-    public static File getDefaultStorage() {
-        return new File(Environment.getExternalStorageDirectory(), "ImageFactory");
     }
 }

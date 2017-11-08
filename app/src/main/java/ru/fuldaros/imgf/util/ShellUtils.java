@@ -29,63 +29,6 @@ public class ShellUtils {
     private static String TAG = "ShellUtils";
     private static boolean isRunning = true;
 
-    public interface Result {
-        void onStdout(String text);
-
-        void onStderr(String text);
-
-        void onCommand(String command);
-
-        void onFinish(int resultCode);
-    }
-
-    private static interface Output {
-        public void output(String text);
-    }
-
-    public static class OutputReader extends Thread {
-        private Output output = null;
-        private BufferedReader reader = null;
-        private boolean isRunning = false;
-
-        public OutputReader(BufferedReader reader, Output output) {
-            this.output = output;
-            this.reader = reader;
-            this.isRunning = true;
-        }
-
-        public void close() {
-            try {
-                reader.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-            }
-        }
-
-        @Override
-        public void run() {
-            // TODO Auto-generated method stub
-            super.run();
-            String line = null;
-            while (isRunning) {
-                try {
-                    line = reader.readLine();
-                    if (line != null)
-                        output.output(line);
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                }
-            }
-        }
-
-        public void cancel() {
-            synchronized (this) {
-                isRunning = false;
-                this.notifyAll();
-            }
-        }
-    }
-
     private static int exec(final String sh, final List<String> cmds, final Result result) {
         Process process = null;
         DataOutputStream stdin = null;
@@ -202,5 +145,62 @@ public class ShellUtils {
             }, true);
         }
         return hasRoot == 0;
+    }
+
+    public interface Result {
+        void onStdout(String text);
+
+        void onStderr(String text);
+
+        void onCommand(String command);
+
+        void onFinish(int resultCode);
+    }
+
+    private static interface Output {
+        public void output(String text);
+    }
+
+    public static class OutputReader extends Thread {
+        private Output output = null;
+        private BufferedReader reader = null;
+        private boolean isRunning = false;
+
+        public OutputReader(BufferedReader reader, Output output) {
+            this.output = output;
+            this.reader = reader;
+            this.isRunning = true;
+        }
+
+        public void close() {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+            }
+        }
+
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            super.run();
+            String line = null;
+            while (isRunning) {
+                try {
+                    line = reader.readLine();
+                    if (line != null)
+                        output.output(line);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                }
+            }
+        }
+
+        public void cancel() {
+            synchronized (this) {
+                isRunning = false;
+                this.notifyAll();
+            }
+        }
     }
 }

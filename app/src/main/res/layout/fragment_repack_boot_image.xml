@@ -9,47 +9,47 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:text="@string/choose_unpacked_boot_image" />
 
-            <android.support.v7.widget.AppCompatTextView
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_weight="1.13" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/repack_boot_image_output_file_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:errorTextAppearance="@style/TextErrorAppearance">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/textInputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/choose_unpacked_boot_image" />
+                android:layout_height="57dp"
+                android:digits="@string/digits"
+                android:hint="@string/repack_boot_image_output_file_name" />
 
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_weight="1.13" />
+        </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/repack_boot_image_output_file_name"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                app:errorTextAppearance="@style/TextErrorAppearance">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/textInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="57dp"
-                    android:digits="@string/digits"
-                    android:hint="@string/repack_boot_image_output_file_name" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/perform_task"
-                android:layout_width="match_parent"
-                android:layout_height="67dp"
-                android:layout_marginTop="10dp"
-                android:enabled="false"
-                android:text="@string/perform_task" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/perform_task"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:text="@string/perform_task" />
     </LinearLayout>
 
 </RelativeLayout>

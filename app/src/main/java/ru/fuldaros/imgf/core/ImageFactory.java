@@ -13,15 +13,15 @@ public class ImageFactory extends Application {
     public static File KERNEL_REPACKED;
     public static File IMAGE_CONVERTED;
 
+    public static Context getApp() {
+        // TODO: Implement this method
+        return APP;
+    }
+
     @Override
     public void onCreate() {
         // TODO: Implement this method
         super.onCreate();
         APP = this;
-    }
-
-    public static Context getApp() {
-        // TODO: Implement this method
-        return APP;
     }
 }

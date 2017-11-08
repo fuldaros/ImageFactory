@@ -36,6 +36,10 @@ public class CpioListParser {
         this.cpioFile = cpioFile;
     }
 
+    public static CpioListParser fromFile(File file) {
+        return new CpioListParser(file);
+    }
+
     private CpioDirEntity parseDirectory(String line) {
         CpioDirEntity entity = new CpioDirEntity();
         String[] content = line.split(" ");
@@ -130,9 +134,5 @@ public class CpioListParser {
                 return lhs.getTarget().compareToIgnoreCase(rhs.getTarget());
             }
         });
-    }
-
-    public static CpioListParser fromFile(File file) {
-        return new CpioListParser(file);
     }
 }

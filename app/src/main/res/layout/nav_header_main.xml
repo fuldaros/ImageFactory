@@ -27,9 +27,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/version"
         android:layout_marginTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/custom_your_images" />
 

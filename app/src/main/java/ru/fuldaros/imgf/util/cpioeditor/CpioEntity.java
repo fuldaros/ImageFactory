@@ -24,52 +24,52 @@ public class CpioEntity {
         this.uid = uid;
     }
 
-    public void setPermission(String permission) {
-        this.permission = permission;
-    }
-
     public String getPermission() {
         return permission;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setTarget(String target) {
-        this.target = target;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getTarget() {
         return target;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setTarget(String target) {
+        this.target = target;
     }
 
     public String getSource() {
         return source;
     }
 
-    public void setGid(String gid) {
-        this.gid = gid;
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public String getGid() {
         return gid;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setGid(String gid) {
+        this.gid = gid;
     }
 
     public String getUid() {
         return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     @Override

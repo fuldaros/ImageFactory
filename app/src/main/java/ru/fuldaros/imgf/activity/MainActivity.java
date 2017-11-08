@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private RecyclerView recyclerView;
     private FunctionAdapter adapter;
     private List<Function> datas = new ArrayList<>();
+    private boolean nextExit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,8 +176,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             }
         }).setNegativeButton(android.R.string.no, null).setCancelable(true).show();
     }
-
-    private boolean nextExit = false;
 
     @Override
     public void onBackPressed() {

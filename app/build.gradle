@@ -1,16 +1,8 @@
-import java.text.SimpleDateFormat
-
 apply plugin: 'com.android.application'
 
-def getBuildDate() {
-    def df = new SimpleDateFormat("yyMMdd")
-    df.setTimeZone(TimeZone.getTimeZone("UTC+03:00"))
-    return df.format(new Date())
-}
 
-def baseVersionName = "2.7.1-RC1";
-def app_name = "ImageFactory"
-def baseVersionCode = 280
+def baseVersionName = "2.7.1-RC2";
+def baseVersionCode = 286
 
 android {
     compileSdkVersion 26
@@ -25,16 +17,9 @@ android {
 
 
     }
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            def fileName = "${app_name}_${versionName}"
-            output.outputFile = new File(outputFile.parent, fileName + ".apk")
-        }
-    }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             zipAlignEnabled true
             shrinkResources false
         }
@@ -45,22 +30,17 @@ android {
         }
     }
 
-    sourceSets.main{
-        jni.srcDirs "src/main/jni/src"
+    sourceSets.main {
         jniLibs.srcDir "src/main/libs"
-    }
-    externalNativeBuild {
-        ndkBuild {
-            path 'src/main/jni/Android.mk'
-        }
     }
 }
 
 dependencies {
+    compile 'com.google.android.gms:play-services-ads:11.4.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:cardview-v7:26.+'
-    compile 'com.android.support:design:26.+'
-    compile 'com.android.support:support-v4:26.+'
-    compile 'com.android.support:preference-v14:26.+'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:preference-v14:26.1.0'
 }

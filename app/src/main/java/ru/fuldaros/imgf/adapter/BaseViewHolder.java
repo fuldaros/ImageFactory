@@ -10,6 +10,16 @@ public class BaseViewHolder extends RecyclerView.ViewHolder implements OnRecycle
     private OnRecyclerViewItemClickListener onItemClickListener;
     private int which;
 
+    public BaseViewHolder(View itemView) {
+        super(itemView);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseViewHolder.this.onClick(v, which);
+            }
+        });
+    }
+
     public void setOnItemClickListener(OnRecyclerViewItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
@@ -20,16 +30,6 @@ public class BaseViewHolder extends RecyclerView.ViewHolder implements OnRecycle
 
     public void setWhich(int which) {
         this.which = which;
-    }
-
-    public BaseViewHolder(View itemView) {
-        super(itemView);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BaseViewHolder.this.onClick(v, which);
-            }
-        });
     }
 
     @Override

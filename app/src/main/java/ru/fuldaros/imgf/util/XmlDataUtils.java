@@ -21,11 +21,6 @@ public class XmlDataUtils {
         return instance;
     }
 
-    public void init() {
-        xml = PreferenceManager.getDefaultSharedPreferences(ImageFactory.APP);
-        xmlEditor = xml.edit();
-    }
-
     public static String getString(String key) {
         return xml.getString(key, "");
     }
@@ -47,5 +42,10 @@ public class XmlDataUtils {
     public static void remove(String key) {
         xmlEditor.remove(key);
         xmlEditor.commit();
+    }
+
+    public void init() {
+        xml = PreferenceManager.getDefaultSharedPreferences(ImageFactory.APP);
+        xmlEditor = xml.edit();
     }
 }

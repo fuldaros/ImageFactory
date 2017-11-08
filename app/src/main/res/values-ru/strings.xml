@@ -124,4 +124,5 @@
     <string name="function_simg2img">Simg2img</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="todo">TODO</string>
 </resources>

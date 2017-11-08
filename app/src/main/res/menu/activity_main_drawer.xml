@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:id="@+id/reboot_utils">
-        <button
+        <text
             android:id="@+id/reboot_normal"
             android:title="@string/reboot_normal_title" />
-        <button
+        <item
             android:id="@+id/reboot_recovery"
             android:title="@string/reboot_recovery_title" />
+        <item
+            android:id="@+id/reboot_hot"
+            android:title="@string/reboot_hot_title" />
         <button
             android:id="@+id/reboot_bootloader"
             android:title="@string/reboot_bootloader_title" />
-        <button
-            android:id="@+id/reboot_hot"
-            android:title="@string/reboot_hot_title" />
     </group>
     <group
         android:id="@+id/personal_items"
@@ -26,6 +26,7 @@
             android:id="@+id/drawer_setting"
             android:icon="@drawable/ic_setting"
             android:title="@string/setting" />
+
         <item
             android:id="@+id/drawer_about"
             android:icon="@drawable/ic_about"

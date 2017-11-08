@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- useful strings -->
+    <string name="admob_publisher_id" translatable="false">ca-app-pub-9685812610140589/9567666476</string>
     <string name="app_name">Image Factory</string>
     <string name="digits" translatable="false">._-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ </string>
     <string name="digits_path" translatable="false">/._-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ </string>
@@ -140,6 +141,7 @@
     <string name="edit_target">Edit Target Location</string>
     <string name="add_new_file">Add new file</string>
     <string name="rootfs">ROOTFS/</string>
+    <string name="todo">TODO</string>
 </resources>
 
 

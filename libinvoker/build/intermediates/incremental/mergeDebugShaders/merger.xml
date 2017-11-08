@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Edj\Desktop\ImageFactory\ImageFactory-master\libinvoker\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Edj\Desktop\ImageFactory\ImageFactory-master\libinvoker\src\debug\shaders"/></dataSet></merger>

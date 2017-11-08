@@ -20,7 +20,7 @@ import ru.fuldaros.imgf.ui.Dialog;
 import ru.fuldaros.imgf.util.DeviceUtils;
 
 /**
- * Created by fuldaros on 16-8-24.
+ * Created by fuldaros on 16-8-24. upd 30.10.2017
  */
 public class AboutFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
@@ -42,16 +42,10 @@ public class AboutFragment extends BaseFragment implements AdapterView.OnItemCli
             root = inflater.inflate(R.layout.fragment_about, container, false);
             setContentView(root);
             listView = (ListView) findViewById(R.id.about_listview);
-            list.add(new AboutItem("Android Open Source Project", "Google", "Android is an open source software stack for a wide range of mobile devices and a corresponding open source project led by Google. This site offers the information and source code you need to create custom variants of the Android stack, port devices and accessories to the Android platform, and ensure your devices meet compatibility requirements.", "https://source.android.com/"));
+            list.add(new AboutItem("Поддержать афффтара", ":D", "Та ничего не нада, но если очень хочется - номер карты в QMS", "http://4pda.ru"));
             adapter = new AboutAdapter(getActivity(), list);
             listView.setOnItemClickListener(this);
             listView.setAdapter(adapter);
-            findViewById(R.id.me).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    DeviceUtils.openUrl(getActivity(), "http://4pda.ru");
-                }
-            });
         }
         return root;
     }

@@ -13,9 +13,9 @@ import ru.fuldaros.imgf.util.FileUtils;
  * Created by fuldaros on 2016/8/14.
  */
 public class Debug {
+    private static final String TAG = "Debug";
     private static File LOG_FILE;
     private static FileWriter fw;
-    private static final String TAG = "Debug";
 
     private Debug() {
 

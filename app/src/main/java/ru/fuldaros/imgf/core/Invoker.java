@@ -9,7 +9,7 @@ import java.util.List;
 import ru.fuldaros.imgf.util.ShellUtils;
 
 /**
- * Created by fuldaros on 16-8-10.
+ * Created by fuldaros on 16-8-10. upd 31.10.2017
  */
 public class Invoker {
 
