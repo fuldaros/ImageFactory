@@ -173,15 +173,7 @@ public class RepackBootImageFragment extends BaseFragment implements TextWatcher
 
         @Override
         protected Boolean doInBackground(String... params) {
-            File[] files = new File[]{
-                    new File(srcDir, ".config"),
-                    new File(srcDir, "zImage"),
-                    new File(srcDir, "second"),
-                    new File(srcDir, "cpio.list"),
-                    new File(srcDir, "ramdisk"),
-                    new File(srcDir, "dt.img"),
-                    new File(ImageFactory.KERNEL_REPACKED, outputFilename)
-            };
+            File[] files = new File[]{new File(srcDir, ".config"), new File(srcDir, "zImage"), new File(srcDir, "second"), new File(srcDir, "cpio.list"), new File(srcDir, "ramdisk"), new File(srcDir, "dt.img"), new File(ImageFactory.KERNEL_REPACKED, outputFilename)};
             for (int i = 0; i < 6; i++) {
                 if (!files[i].exists()) {
                     Debug.i(TAG, "cannot find : " + files[i].getPath());

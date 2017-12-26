@@ -48,11 +48,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/img2simg_select_file"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1.0"
@@ -60,7 +60,7 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/img2simg_perform_task"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1.0"

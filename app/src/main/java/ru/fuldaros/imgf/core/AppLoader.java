@@ -9,10 +9,10 @@ import ru.fuldaros.imgf.util.XmlDataUtils;
 
 public class AppLoader extends Thread {
 
-    private String TAG = "AppLoader";
+    private String TAG = "Загрузчик модулей";
 
     public static File getDefaultStorage() {
-        return new File(Environment.getExternalStorageDirectory(), "ImageFactory");
+        return new File(Environment.getExternalStorageDirectory(), "IFdir");
     }
 
     @Override
@@ -33,12 +33,12 @@ public class AppLoader extends Thread {
         File log = new File(ImageFactory.DATA_PATH, ".logs");
         log.mkdirs();
         Debug.init(new File(log, "log_" + DeviceUtils.getSystemTime() + ".txt"));
-        Debug.i(TAG, "Loading app");
-        Debug.i(TAG, "DATA_PATH=" + ImageFactory.DATA_PATH);
-        File kernelBackups = new File(ImageFactory.DATA_PATH, "backups");
-        File kernelUnpacked = new File(ImageFactory.DATA_PATH, "unpacked");
-        File kernelRepacked = new File(ImageFactory.DATA_PATH, "repacked");
-        File imageConverted = new File(ImageFactory.DATA_PATH, "converted");
+        Debug.i(TAG, "Запуск компонентов...");
+        Debug.i(TAG, "Папка программы=" + ImageFactory.DATA_PATH);
+        File kernelBackups = new File(ImageFactory.DATA_PATH, "backupsIF");
+        File kernelUnpacked = new File(ImageFactory.DATA_PATH, "unpackedIF");
+        File kernelRepacked = new File(ImageFactory.DATA_PATH, "repackedIF");
+        File imageConverted = new File(ImageFactory.DATA_PATH, "convertedIF");
         kernelBackups.mkdirs();
         kernelRepacked.mkdirs();
         kernelUnpacked.mkdirs();

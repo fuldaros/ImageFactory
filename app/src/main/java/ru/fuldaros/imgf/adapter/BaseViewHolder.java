@@ -34,7 +34,6 @@ public class BaseViewHolder extends RecyclerView.ViewHolder implements OnRecycle
 
     @Override
     public void onClick(View view, int pos) {
-        if (onItemClickListener != null)
-            onItemClickListener.onClick(view, pos);
+        if (onItemClickListener != null) onItemClickListener.onClick(view, pos);
     }
 }

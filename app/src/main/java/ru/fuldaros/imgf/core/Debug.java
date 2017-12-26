@@ -25,7 +25,7 @@ public class Debug {
         LOG_FILE = logFile;
         try {
             fw = new FileWriter(LOG_FILE, false);
-            fw.write("App started at : " + DeviceUtils.getSystemTime() + "\n");
+            fw.write("Приложение было запущено : " + DeviceUtils.getSystemTime() + "\n");
             fw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -179,15 +179,7 @@ public class PortBootImageFragment extends BaseFragment implements TextWatcher {
 
         @Override
         protected Boolean doInBackground(String... params) {
-            File[] files = new File[]{
-                    new File(baseDir, ".config"),
-                    new File(baseDir, "zImage"),
-                    new File(baseDir, "second"),
-                    new File(sampleDir, "cpio.list"),
-                    new File(sampleDir, "ramdisk"),
-                    new File(baseDir, "dt.img"),
-                    new File(ImageFactory.KERNEL_UNPACKED, outputFilename)
-            };
+            File[] files = new File[]{new File(baseDir, ".config"), new File(baseDir, "zImage"), new File(baseDir, "second"), new File(sampleDir, "cpio.list"), new File(sampleDir, "ramdisk"), new File(baseDir, "dt.img"), new File(ImageFactory.KERNEL_UNPACKED, outputFilename)};
             for (int i = 0; i < 6; i++) {
                 if (!files[i].exists()) {
                     Debug.i(TAG, "cannot find : " + files[i].getPath());

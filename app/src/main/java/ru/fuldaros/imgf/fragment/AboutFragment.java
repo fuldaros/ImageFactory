@@ -53,16 +53,12 @@ public class AboutFragment extends BaseFragment implements AdapterView.OnItemCli
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         final String url = list.get(position).getUrl();
-        Dialog.create(getActivity()).setTitle(R.string.browse_home_page)
-                .setMessage(url)
-                .setPositiveButton(R.string.browse, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        DeviceUtils.openUrl(getActivity(), url);
-                    }
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .show();
+        Dialog.create(getActivity()).setTitle(R.string.browse_home_page).setMessage(url).setPositiveButton(R.string.browse, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeviceUtils.openUrl(getActivity(), url);
+            }
+        }).setNegativeButton(android.R.string.cancel, null).show();
     }
 
 }

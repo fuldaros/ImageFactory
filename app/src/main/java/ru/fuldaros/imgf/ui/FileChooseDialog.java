@@ -82,19 +82,15 @@ public class FileChooseDialog extends AppCompatDialog {
                     mListView.setAdapter(getAdapter(listDirectory(path)));
                 } else if (file.isFile()) {
                     AlertDialog.Builder dialogBuilder = Dialog.create(mContext);
-                    dialogBuilder.setTitle(getString(R.string.select_file))
-                            .setMessage(file.getAbsolutePath())
-                            .setPositiveButton(android.R.string.yes, new OnClickListener() {
+                    dialogBuilder.setTitle(getString(R.string.select_file)).setMessage(file.getAbsolutePath()).setPositiveButton(android.R.string.yes, new OnClickListener() {
 
-                                @Override
-                                public void onClick(DialogInterface p1, int p2) {
-                                    // TODO: Implement this method
-                                    mCallback.onSelected(file);
-                                    dismiss();
-                                }
-                            })
-                            .setNegativeButton(android.R.string.no, null)
-                            .show();
+                        @Override
+                        public void onClick(DialogInterface p1, int p2) {
+                            // TODO: Implement this method
+                            mCallback.onSelected(file);
+                            dismiss();
+                        }
+                    }).setNegativeButton(android.R.string.no, null).show();
                 }
                 mTextView.setText(path.getPath());
             }

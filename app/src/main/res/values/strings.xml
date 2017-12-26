@@ -101,10 +101,9 @@
     <string name="warning">Warning</string>
     <string name="no_write_external_storage_permission">Can not get permission to operate the storage space, the program can not run, click OK to exit!</string>
     <string name="close">Close</string>
-    <string name="author_name">Build Author : </string>
-    <string name="email">Email : </string>
+    <string name="author_name">Author : </string>
     <string name="copyright">Copyright © 2017 fuldaros. All Rights Reserved.</string>
-    <string name="qq_group" translatable="false">Build: </string>
+    <string name="ver" translatable="false">Version: </string>
     <string name="terminal">Terminal Output</string>
     <string name="function_simg2img">Simg2img</string>
     <string name="function_unpack_boot_image">Unpack Image</string>

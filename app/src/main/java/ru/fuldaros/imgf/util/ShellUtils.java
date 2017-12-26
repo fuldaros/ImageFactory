@@ -26,7 +26,7 @@ import ru.fuldaros.imgf.core.Debug;
 
 public class ShellUtils {
     private static int hasRoot = 123;
-    private static String TAG = "ShellUtils";
+    private static String TAG = "Утилиты";
     private static boolean isRunning = true;
 
     private static int exec(final String sh, final List<String> cmds, final Result result) {
@@ -40,31 +40,26 @@ public class ShellUtils {
             process = Runtime.getRuntime().exec(sh);
             stdin = new DataOutputStream(process.getOutputStream());
             if (result != null) {
-                stdout = new OutputReader(new BufferedReader(new InputStreamReader(process.getInputStream())),
-                        new Output() {
-                            @Override
-                            public void output(String text) {
-                                // TODO Auto-generated method stub
-                                if (result != null)
-                                    result.onStdout(text);
-                            }
-                        });
-                stderr = new OutputReader(new BufferedReader(new InputStreamReader(process.getErrorStream())),
-                        new Output() {
-                            @Override
-                            public void output(String text) {
-                                // TODO Auto-generated method stub
-                                if (result != null)
-                                    result.onStderr(text);
-                            }
-                        });
+                stdout = new OutputReader(new BufferedReader(new InputStreamReader(process.getInputStream())), new Output() {
+                    @Override
+                    public void output(String text) {
+                        // TODO Auto-generated method stub
+                        if (result != null) result.onStdout(text);
+                    }
+                });
+                stderr = new OutputReader(new BufferedReader(new InputStreamReader(process.getErrorStream())), new Output() {
+                    @Override
+                    public void output(String text) {
+                        // TODO Auto-generated method stub
+                        if (result != null) result.onStderr(text);
+                    }
+                });
                 stdout.start();
                 stderr.start();
             }
             for (String cmd : cmds) {
                 Debug.i(TAG, cmd);
-                if (result != null)
-                    result.onCommand(cmd);
+                if (result != null) result.onCommand(cmd);
                 stdin.writeBytes(cmd);
                 stdin.writeBytes("\n");
                 stdin.flush();
@@ -73,8 +68,7 @@ public class ShellUtils {
             stdin.flush();
             resultCode = process.waitFor();
             Debug.i(TAG, "RESULT_CODE=" + resultCode);
-            if (result != null)
-                result.onFinish(resultCode);
+            if (result != null) result.onFinish(resultCode);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -188,8 +182,7 @@ public class ShellUtils {
             while (isRunning) {
                 try {
                     line = reader.readLine();
-                    if (line != null)
-                        output.output(line);
+                    if (line != null) output.output(line);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                 }

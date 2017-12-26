@@ -60,10 +60,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             final AppCompatButton okButton = (AppCompatButton) contentView.findViewById(R.id.ok);
             final AppCompatButton cancelButton = (AppCompatButton) contentView.findViewById(R.id.cancel);
             final AlertDialog.Builder dialogBuilder = Dialog.create(this);
-            final AlertDialog dialog = dialogBuilder.setTitle(R.string.disclaimer)
-                    .setView(contentView)
-                    .setCancelable(false)
-                    .create();
+            final AlertDialog dialog = dialogBuilder.setTitle(R.string.disclaimer).setView(contentView).setCancelable(false).create();
             checker.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -116,11 +113,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         View content = getLayoutInflater().inflate(R.layout.large_text_view, null, false);
         TextView textView = (TextView) content.findViewById(R.id.content);
         new ChangeLogLoader(textView).execute();
-        Dialog.create(MainActivity.this).setTitle(R.string.change_log)
-                .setView(content)
-                .setPositiveButton(android.R.string.ok, null)
-                .setCancelable(false)
-                .show();
+        Dialog.create(MainActivity.this).setTitle(R.string.change_log).setView(content).setPositiveButton(android.R.string.ok, null).setCancelable(false).show();
     }
 
     @Override

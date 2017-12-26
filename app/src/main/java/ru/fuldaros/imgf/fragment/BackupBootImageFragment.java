@@ -82,8 +82,7 @@ public class BackupBootImageFragment extends BaseFragment implements TextWatcher
     }
 
     public ArrayAdapter getAdapter() {
-        return new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item,
-                getResources().getStringArray(R.array.partition_type));
+        return new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.partition_type));
     }
 
     @Override

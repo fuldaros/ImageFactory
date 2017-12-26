@@ -75,10 +75,7 @@ public class CpioEditorActivity extends BaseActivity implements OnRecyclerViewIt
                                                 editCpioItem(entity, false);
                                             }
                                         }
-                                    }).setNegativeButton(android.R.string.cancel, null)
-                                            .setCancelable(false)
-                                            .setTitle(R.string.edit_target)
-                                            .show();
+                                    }).setNegativeButton(android.R.string.cancel, null).setCancelable(false).setTitle(R.string.edit_target).show();
                                 }
                             });
                         } else if (which == 1) {
@@ -101,10 +98,7 @@ public class CpioEditorActivity extends BaseActivity implements OnRecyclerViewIt
                                         editCpioItem(entity, false);
                                     }
                                 }
-                            }).setNegativeButton(android.R.string.cancel, null)
-                                    .setCancelable(false)
-                                    .setTitle(R.string.edit_target)
-                                    .show();
+                            }).setNegativeButton(android.R.string.cancel, null).setCancelable(false).setTitle(R.string.edit_target).show();
                         }
                     }
                 }).setTitle(R.string.new_cpio_item).setCancelable(true).show();
@@ -175,26 +169,20 @@ public class CpioEditorActivity extends BaseActivity implements OnRecyclerViewIt
         permission.setText(entity.getPermission());
         gid.setText(entity.getGid());
         uid.setText(entity.getUid());
-        Dialog.create(this)
-                .setView(root)
-                .setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (!TextUtils.isEmpty(target.getText().toString()) && !TextUtils.isEmpty(permission.getText().toString()) && !TextUtils.isEmpty(gid.getText().toString()) && !TextUtils.isEmpty(uid.getText().toString())) {
-                            entity.setTarget(target.getText().toString());
-                            entity.setSource(source.getText().toString());
-                            entity.setPermission(permission.getText().toString());
-                            entity.setUid(uid.getText().toString());
-                            entity.setGid(gid.getText().toString());
-                            if (!isIn)
-                                datas.add(entity);
-                            saveCpioItems();
-                        }
-                    }
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .setCancelable(true)
-                .show();
+        Dialog.create(this).setView(root).setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (!TextUtils.isEmpty(target.getText().toString()) && !TextUtils.isEmpty(permission.getText().toString()) && !TextUtils.isEmpty(gid.getText().toString()) && !TextUtils.isEmpty(uid.getText().toString())) {
+                    entity.setTarget(target.getText().toString());
+                    entity.setSource(source.getText().toString());
+                    entity.setPermission(permission.getText().toString());
+                    entity.setUid(uid.getText().toString());
+                    entity.setGid(gid.getText().toString());
+                    if (!isIn) datas.add(entity);
+                    saveCpioItems();
+                }
+            }
+        }).setNegativeButton(android.R.string.cancel, null).setCancelable(true).show();
     }
 
     @Override

@@ -42,10 +42,8 @@ public class DeviceGetter extends AsyncTask<Void, Void, Device> {
         if (device.getRecoveryPath().equals("") || device.getKernelPath().equals("")) {
             Toast.makeShortText(context.getString(R.string.maybe_this_function_unsupported_your_device));
         } else {
-            if (which == Device.KERNEL)
-                editText.setText(device.getKernelPath());
-            else
-                editText.setText(device.getRecoveryPath());
+            if (which == Device.KERNEL) editText.setText(device.getKernelPath());
+            else editText.setText(device.getRecoveryPath());
         }
     }
 

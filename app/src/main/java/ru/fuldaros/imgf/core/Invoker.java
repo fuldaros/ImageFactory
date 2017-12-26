@@ -34,13 +34,7 @@ public class Invoker {
     }
 
     public static boolean mkbootimg(File config, File kernel, File ramdisk, File second, File dt, File outputFile, ShellUtils.Result result) {
-        String cmd = String.format("mkbootimg --config \'%s\' --kernel \'%s\' --ramdisk \'%s\' --second \'%s\' --dt \'%s\' -o \'%s\'",
-                config.getPath(),
-                kernel.getPath(),
-                ramdisk.getPath(),
-                second.getPath(),
-                dt.getPath(),
-                outputFile.getPath());
+        String cmd = String.format("mkbootimg --config \'%s\' --kernel \'%s\' --ramdisk \'%s\' --second \'%s\' --dt \'%s\' -o \'%s\'", config.getPath(), kernel.getPath(), ramdisk.getPath(), second.getPath(), dt.getPath(), outputFile.getPath());
         return execInvoker(result, cmd);
     }
 

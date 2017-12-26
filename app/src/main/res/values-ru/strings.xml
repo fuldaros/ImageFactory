@@ -4,7 +4,7 @@
     <string name="add_new_file">Добавить новый файл</string>
     <string name="app_name">Image Factory</string>
     <string name="are_you_sure_you_want_to_do_this">Вы уверены, что хотите это сделать?</string>
-    <string name="author_name">Автор билда:</string>
+    <string name="author_name">Автор:</string>
     <string name="backup_success">Резервное копирование завершено</string>
     <string name="backup_to_file">"Сохранено в файл: '%s'"</string>
     <string name="backuping">Создание рез. копии...</string>
@@ -24,7 +24,6 @@
     <string name="disclaimer">Отказ от ответствености</string>
     <string name="disclaimer_content">1. Всё можно, но я не за что не отвечаю :333.</string>
     <string name="edit_target">Выбор места сохранения</string>
-    <string name="email">Эл. адрес :</string>
     <string name="extracted_to_folder">"Распаковано в папку: '%s'"</string>
     <string name="extracting">Распаковка...</string>
     <string name="failed">Сбой операции</string>

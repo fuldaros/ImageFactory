@@ -28,7 +28,7 @@ public class SplashActivity extends BaseActivity {
         View view = findViewById(R.id.imageView);
         view.setVisibility(View.VISIBLE);
         ScaleAnimation animation = new ScaleAnimation(0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF);
-        animation.setDuration(1500);
+        animation.setDuration(500);
         view.startAnimation(animation);
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
@@ -40,14 +40,13 @@ public class SplashActivity extends BaseActivity {
                     openApp();
                 }
             }
-        }, 2000);
+        }, 500);
 
     }
 
     @TargetApi(Build.VERSION_CODES.M)
     private void requestStoragePermission() {
-        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             openApp();
             return;
         }
@@ -63,24 +62,20 @@ public class SplashActivity extends BaseActivity {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
-        }, 500);
+        }, 200);
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openApp();
         } else {
-            Dialog.create(this).setTitle(R.string.warning)
-                    .setMessage(R.string.no_write_external_storage_permission)
-                    .setCancelable(false)
-                    .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    }).show();
+            Dialog.create(this).setTitle(R.string.warning).setMessage(R.string.no_write_external_storage_permission).setCancelable(false).setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            }).show();
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
